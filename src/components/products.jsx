@@ -55,9 +55,9 @@ export default function Products() {
                     <p className="card-text lead fw-bold">${product.price}</p>
                     <a
                       href="#3"
-                      className="btn btn-outline-dark fa fa-shopping-cart me-1"
+                      className="btn btn-outline-dark fa-shopping-cart me-1"
                     >
-                          buy
+                      buy now
                     </a>
                   </div>
                 </div>
@@ -78,7 +78,7 @@ export default function Products() {
           </div>
         </div>
         <div className="row"></div>
-        {loading? <Loading /> : <ShowProduct />}
+        {loading ? <Loading /> : <ShowProduct />}
       </div>
     </div>
   );
