@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
+import Skeleton from "react-loading-skeleton";
 
 export default function Products() {
   const [data, setData] = useState([]);
@@ -25,17 +26,48 @@ export default function Products() {
     getProducts();
   }, []);
   const Loading = () => {
-    return <>loading......</>;
+    return (
+      <>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+      </>
+    );
   };
   const ShowProduct = () => {
     return (
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
-          <div className="btn btn-outline-dark me-2">All</div>
-          <div className="btn btn-outline-dark me-2">curtains</div>
-          <div className="btn btn-outline-dark me-2">pillows</div>
-          <div className="btn btn-outline-dark me-2">mats and rags</div>
-          <div className="btn btn-outline-dark me-2">tiles</div>
+          <div
+            className="btn btn-outline-dark me-2 "
+            onClick={() => setFilter(data)}
+          >
+            All
+          </div>
+          <div
+            className="btn btn-outline-dark me-2"
+            onClick={() => setFilter(data)}
+          >
+            curtains
+          </div>
+          <div
+            className="btn btn-outline-dark me-2"
+            onClick={() => setFilter(data)}
+          >
+            pillows
+          </div>
+          <div
+            className="btn btn-outline-dark me-2"
+            onClick={() => setFilter(data)}
+          >
+            mats and rags
+          </div>
+          <div
+            className="btn btn-outline-dark me-2"
+            onClick={() => setFilter(data)}
+          >
+            tiles
+          </div>
         </div>
         {filter.map((product) => {
           return (
